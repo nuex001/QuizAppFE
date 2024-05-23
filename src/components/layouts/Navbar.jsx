@@ -2,11 +2,21 @@ import React, { useEffect, useState } from "react";
 import { FaCalendarAlt, FaQuestion } from "react-icons/fa";
 import { GiSevenPointedStar } from "react-icons/gi";
 import { PiSignOutFill } from "react-icons/pi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 function Navbar() {
   const [showNav, setShowNav] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+const navigate = useNavigate();
+
+
+  const logout = (e) => {
+    e.preventDefault();
+    localStorage.setItem("token","");
+    navigate("login")
+  };
+
+
 
   const controlNavBar = () => {
     if (window.scrollY > lastScrollY) {
@@ -30,7 +40,7 @@ function Navbar() {
   return (
     <>
       <nav className="desktop">
-        <Link to="#">
+        <Link to="#" onClick={logout}>
           <PiSignOutFill className="icon" /> Signout
         </Link>
       </nav>
@@ -64,7 +74,7 @@ function Navbar() {
             </ScrollLink>
           </li>
           <li>
-            <Link to="#">
+            <Link to="#" onClick={logout}>
               <PiSignOutFill className="icon" />
             </Link>
           </li>

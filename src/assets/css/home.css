@@ -83,10 +83,27 @@
   text-align: center;
   margin: 1em auto;
 }
-.home .box.quiz .answers {
+.home .box.quiz h3 {
+  color: var(--text);
+  font-size: 1.4em;
+  margin-top: 0.5em;
+  padding: 0.7em 0.7em;
+  margin: 1em auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  color: green;
+  box-shadow: rgba(22, 22, 23, 0.2) 0px 8px 24px;
+}
+.home .box.quiz h3.bad{
+  color: crimson;
+}
+.home .box.quiz .questions {
+  width: 100%;
   margin-top: 2em;
 }
-.home .box.quiz .answers .btn {
+.home .box.quiz .questions .btn {
   display: flex;
   width: 100%;
   min-height: 50px;
@@ -101,20 +118,20 @@
   border-radius: 5px;
   cursor: pointer;
 }
-.home .box.quiz .answers .btn span:first-child {
+.home .box.quiz .questions .btn span:first-child {
   width: 12px;
   height: 12px;
   border-radius: 50%;
   border: 2px solid var(--text);
 }
-.home .box.quiz .answers .btn span:last-child {
+.home .box.quiz .questions .btn span:last-child {
   width: calc(100% - 20px);
   font-size: 1.2em;
 }
-.home .box.quiz .answers .btn.active {
+.home .box.quiz .questions .btn.active {
   background: var(--primary);
 }
-.home .box.quiz .answers .btn.active span:first-child {
+.home .box.quiz .questions .btn.active span:first-child {
   background: var(--text);
 }
 

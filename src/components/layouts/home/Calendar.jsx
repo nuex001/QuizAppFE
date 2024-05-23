@@ -1,7 +1,8 @@
 import React from "react";
 
 const Calendar = () => {
-  const today = new Date();
+  const today = new Date('Thu May 23 2024 10:14:09 GMT+0100 (West Africa Standard Time)');
+  // console.log(today);
   const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   const totalDays = 30;
   const startDay = today.getDay();

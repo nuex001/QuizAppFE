@@ -1,6 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { GiSevenPointedStar } from "react-icons/gi";
+import axios from "axios";
+
 function Points() {
+  const [data, setData] = useState(null);
+  const fetchUser = async () => {
+    try {
+      const res = await axios.get("https://quizappbe.onrender.com/api/user/");
+      // console.log(res.data);
+      setData(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    fetchUser();
+  }, []);
   return (
     <div className="box points" id="points">
       <div className="wallet">
@@ -8,8 +23,8 @@ function Points() {
       </div>
       <h1>My Pionts</h1>
       <GiSevenPointedStar className="icon" />
-      <h4>200</h4>
-      <button>Refresh Pionts</button>
+      <h4>{data && data.point}</h4>
+      <button onClick={fetchUser}>Refresh Pionts</button>
     </div>
   );
 }

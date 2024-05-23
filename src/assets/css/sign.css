@@ -89,6 +89,9 @@
 .sign form .rows .box .icon {
   font-size: 2em;
 }
+.sign form .rows .box .icon.eye {
+  cursor: pointer;
+}
 .sign form .rows p {
   font-size: 1em;
   margin: 1em 0em;
@@ -114,8 +117,6 @@
   margin-top: 1em;
 }
 
-
-
 /* MOBILE RESPONSIVNESS */
 @media (max-width: 768px) {
   .sign {
@@ -126,7 +127,7 @@
     padding-bottom: 6em;
   }
 
-.sign form {
+  .sign form {
     width: 100%;
     padding: 1em 1em;
   }
@@ -136,6 +137,5 @@
   .sign form .socail_sign a {
     font-size: 1em;
   }
-  
-  
 }
+
