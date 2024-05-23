@@ -13,10 +13,9 @@ function App() {
       <div className="container">
         <ScrollToTop/>
         <Routes>
-          {/* <Route element={<PrivateRoute />}>
+          <Route element={<PrivateRoute />}>
             <Route exact path="/" element={<Home />} />
-          </Route> */}
-            <Route exact path="/" element={<Home />} />
+          </Route>
           <Route exact path="/sign" element={<Sign />} />
           <Route exact path="/login" element={<Login />} />
         </Routes>
