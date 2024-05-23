@@ -1,5 +1,5 @@
 .home {
-  width: 100%;
+  width: 100vw;
   min-height: calc(100vh - 10vh);
   display: flex;
   align-items: center;
@@ -7,6 +7,7 @@
   gap: 4em;
   padding: 2em 6em;
   margin: 0em auto;
+  overflow: hidden;
   /* border: 2px solid var(--text); */
 }
 .home .box {
@@ -212,21 +213,25 @@
     flex-direction: column;
     padding: 2em 2em;
     position: relative;
+    perspective: 1000px;
   }
   .home .box {
-    width: calc(100% - 2em);
+    width: calc(100% - 4em);
     top: 50%;
     left: 50%;
     position: absolute;
-    transform: translate(200%,-50%);
-    transition:transform 500ms ease-in-out ;
+    transform-style: preserve-3d;
+    transform: rotateY(-90deg) translate(150%,-50%);
+    transition: transform 0.6s ease-in;
+    border-radius: 10px;
+    background: var(--bg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
   .home .box.active{
-    transform: translate(-50%,-50%);
+        transform: rotateY(0deg)translate(-50%,-50%);
   }
   /* CALENDER */
   .home .box .calendar {
-    width: 100%;
     padding: 2em 1em;
   }
   .home .box .calendar ul {

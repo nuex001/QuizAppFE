@@ -14,24 +14,6 @@ function Navbar({setCurrentLink}) {
     navigate("login");
   };
 
-  const controlNavBar = () => {
-    if (window.scrollY > lastScrollY) {
-      // if scrolling down
-      setShowNav(false);
-    } else {
-      // if scrolling up
-      setShowNav(true);
-    }
-    setLastScrollY(window.scrollY);
-  };
-
-  useEffect(() => {
-    //adding our function to scroll event
-    window.addEventListener("scroll", controlNavBar);
-    return () => {
-      window.removeEventListener("scroll", controlNavBar);
-    };
-  }, [lastScrollY]);
 
   return (
     <>
