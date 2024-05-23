@@ -71,7 +71,7 @@ function Login() {
         <a href="" target='_blank'><FcGoogle className='icon'/>Sign in with goggle</a>
         <a href="" target='_blank'><FaApple className='icon'/>Sign in with Apple</a>
     </div>
-    <h6>or sign in with email and password <span>---------------------------</span></h6>
+    <h6>or sign in with email and password <span>--------------------</span></h6>
     <div className="rows">
         <label htmlFor="email">Email Address</label>
         <div className="box">

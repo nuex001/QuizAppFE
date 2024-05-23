@@ -79,7 +79,7 @@ function Sign() {
         </div>
         <h6>
           or sign up with email and password{" "}
-          <span>---------------------------</span>
+          <span>--------------------</span>
         </h6>
         <div className="rows">
           <label htmlFor="email">Email Address</label>
