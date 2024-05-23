@@ -7,16 +7,16 @@ import PrivateRoute from "./components/pages/PrivateRouter";
 import ScrollToTop from "./components/pages/ScrollToTop";
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <BrowserRouter>
       <div className="container">
         <ScrollToTop/>
         <Routes>
-          <Route element={<PrivateRoute />}>
+          {/* <Route element={<PrivateRoute />}>
             <Route exact path="/" element={<Home />} />
-          </Route>
+          </Route> */}
+            <Route exact path="/" element={<Home />} />
           <Route exact path="/sign" element={<Sign />} />
           <Route exact path="/login" element={<Login />} />
         </Routes>

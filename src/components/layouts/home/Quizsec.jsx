@@ -70,7 +70,7 @@ const Quizsec = () => {
   }, []);
 
   return (
-    <div className="box quiz" id="quiz">
+    <>
       <img src={quizImg} alt="Quiz" />
       <h2>{data && data.question}</h2>
       {failed !== null &&
@@ -127,7 +127,7 @@ const Quizsec = () => {
         )}
       </div>
       <button onClick={submitQuiz}>Submit</button>
-    </div>
+    </>
   );
 };
 

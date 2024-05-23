@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../assets/css/home.css";
 import Calendar from "../layouts/home/Calendar";
 import Quizsec from "../layouts/home/Quizsec";
@@ -7,16 +7,21 @@ import Navbar from "../layouts/Navbar";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 function Home() {
+  const [currentLink, setCurrentLink] = useState("cal");
   return (
     <>
-      <Navbar />
+      <Navbar setCurrentLink={setCurrentLink}/>
       <div className="home">
-      <ToastContainer/>
-        <div className="box">
+        <ToastContainer />
+        <div className={`box ${currentLink === "cal" ? "active" : ""}`}>
           <Calendar />
         </div>
-        <Quizsec />
-        <Points />
+        <div className={`box quiz ${currentLink === "quiz" ? "active" : ""}`}>
+          <Quizsec />
+        </div>
+        <div className={`box points ${currentLink === "points" ? "active" : ""}`}>
+          <Points />
+        </div>
       </div>
     </>
   );

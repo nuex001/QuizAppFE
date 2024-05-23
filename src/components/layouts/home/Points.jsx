@@ -17,7 +17,7 @@ function Points() {
     fetchUser();
   }, []);
   return (
-    <div className="box points" id="points">
+    <>
       <div className="wallet">
         <h2>Wallet address</h2>
       </div>
@@ -25,7 +25,7 @@ function Points() {
       <GiSevenPointedStar className="icon" />
       <h4>{data && data.point}</h4>
       <button onClick={fetchUser}>Refresh Pionts</button>
-    </div>
+    </>
   );
 }
 

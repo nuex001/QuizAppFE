@@ -96,7 +96,7 @@
   color: green;
   box-shadow: rgba(22, 22, 23, 0.2) 0px 8px 24px;
 }
-.home .box.quiz h3.bad{
+.home .box.quiz h3.bad {
   color: crimson;
 }
 .home .box.quiz .questions {
@@ -205,25 +205,25 @@
   margin-top: 1em;
 }
 
-
-
-
-
-
 /* MOBILE RESPONSIVNESS */
 @media (max-width: 768px) {
   .home {
     gap: 8em;
     flex-direction: column;
     padding: 2em 2em;
+    position: relative;
   }
   .home .box {
-    width: 100%;
+    width: calc(100% - 2em);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(200%,-50%);
+    transition:transform 500ms ease-in-out ;
   }
-  .home .box:first-child {
-    width: 100%;
+  .home .box.active{
+    transform: translate(-50%,-50%);
   }
-
   /* CALENDER */
   .home .box .calendar {
     width: 100%;

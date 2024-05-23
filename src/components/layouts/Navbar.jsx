@@ -3,20 +3,16 @@ import { FaCalendarAlt, FaQuestion } from "react-icons/fa";
 import { GiSevenPointedStar } from "react-icons/gi";
 import { PiSignOutFill } from "react-icons/pi";
 import { Link, useNavigate } from "react-router-dom";
-import { Link as ScrollLink } from "react-scroll";
-function Navbar() {
+function Navbar({setCurrentLink}) {
   const [showNav, setShowNav] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-const navigate = useNavigate();
-
+  const navigate = useNavigate();
 
   const logout = (e) => {
     e.preventDefault();
-    localStorage.setItem("token","");
-    navigate("login")
+    localStorage.setItem("token", "");
+    navigate("login");
   };
-
-
 
   const controlNavBar = () => {
     if (window.scrollY > lastScrollY) {
@@ -47,31 +43,37 @@ const navigate = useNavigate();
       <nav className={`mobile ${showNav ? "show" : ""}`}>
         <ul>
           <li>
-            <ScrollLink
+            <Link
               to="cal" // Make sure to use the correct ID of your target element
-              spy={true}
-              smooth={true}
+            onClick={(e)=>{
+              e.preventDefault();
+              setCurrentLink("cal")
+            }}
             >
               <FaCalendarAlt className="icon" />
-            </ScrollLink>
+            </Link>
           </li>
           <li>
-            <ScrollLink
+            <Link
               to="quiz" // Make sure to use the correct ID of your target element
-              spy={true}
-              smooth={true}
-            >
+              onClick={(e)=>{
+                e.preventDefault();
+                setCurrentLink("quiz")
+              }}
+           >
               <FaQuestion className="icon" />
-            </ScrollLink>
+            </Link>
           </li>
           <li>
-            <ScrollLink
+            <Link
               to="points" // Make sure to use the correct ID of your target element
-              spy={true}
-              smooth={true}
+              onClick={(e)=>{
+                e.preventDefault();
+                setCurrentLink("points")
+              }}
             >
               <GiSevenPointedStar className="icon" />
-            </ScrollLink>
+            </Link>
           </li>
           <li>
             <Link to="#" onClick={logout}>
